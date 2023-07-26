@@ -9,9 +9,9 @@
     <version>1.0</version>
     <modules>
         <module>user-service</module>
+        <module>feign-api</module>
         <module>order-service</module>
         <module>eureka-server</module>
-        <module>feign-api</module>
         <module>gateway</module>
     </modules>
 
@@ -69,6 +69,7 @@
             </dependency>
 
         </dependencies>
+
     </dependencyManagement>
     <dependencies>
         <dependency>
@@ -76,4 +77,18 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
